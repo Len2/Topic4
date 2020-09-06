@@ -54,12 +54,12 @@ public class IdentityCardController {
 	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
 		
 		// get employee prej service
-		Identity_card identity_card = identityCardService.getIdentityCardById(id);
+		Identity_card employee = identityCardService.get(id);
 		
 		
 		// set employee si atribut per ta mbushur formen
-		model.addAttribute("identity_card", identity_card);
-		return "updateIdCard";
+		model.addAttribute("employee", employee);
+		return "update_employee";
 	}
     
     

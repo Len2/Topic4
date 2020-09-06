@@ -48,18 +48,18 @@ public class IdentityCardController {
 		return "redirect:/";
     }
 
-    
+    updateIdCard
 
-    @GetMapping("/updateIdCard/{id}")
+    @GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
 		
 		// get employee prej service
-		Identity_card identity_card = identityCardService.getIdentityCardById(id);
+		Employee employee = employeeService.getEmployeeById(id);
 		
 		
 		// set employee si atribut per ta mbushur formen
-		model.addAttribute("identity_card", identity_card);
-		return "updateIdCard";
+		model.addAttribute("employee", employee);
+		return "update_employee";
 	}
     
     

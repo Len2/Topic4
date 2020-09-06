@@ -58,8 +58,8 @@ public class IdentityCardController {
 		
 		
 		// set employee si atribut per ta mbushur formen
-		model.addAttribute("identity_card", identity_card);
-		return "updateIdCard";
+		model.addAttribute("employee", identity_card);
+		return "update_employee";
 	}
     
     

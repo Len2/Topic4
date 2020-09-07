@@ -284,6 +284,105 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title m-b-0">Identity Card</h5>
+                                </div>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Last Name</th>
+                                                    <th scope="col">Nationality</th>
+                                                    <th scope="col">Place Of Birthday</th>
+                                                    <th scope="col">Gener</th>
+                                                    <th scope="col"></th>
+                                                    <th scope="col"></th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="customtable">
+                                                <tr>
+                                                    <td th:text="${identityCard.id}"></th>
+                                                    <td th:text="${identityCard.firstName}"></td>
+                                                    <td th:text="${identityCard.lastName}"></td>
+                                                    <td th:text="${identityCard.nationality}"></td>
+                                                    <td th:text="${identityCard.placeOfBirthday}"></td>
+                                                    <td th:text="${identityCard.gender}"></td>
+                                                    <td> <a th:href="@{/pdf/{id}(id=${identityCard.id})}" class="btn btn-warning btn-sm">Export PDF</a></td>
+                                                    <td><a th:href="@{/updateIdCard/{id}(id=${identityCard.id})}" class="btn btn-secondary btn-sm">Update</a></td>
+                                                     <td><a th:href="@{/deleteIdCard/{id}(id=${identityCard.id})}" class="btn btn-danger btn-sm">Delete</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="customcheckbox">
+                                                            <input type="checkbox" class="listCheckbox" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </th>
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 5.0</td>
+                                                    <td>Win 95+</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="customcheckbox">
+                                                            <input type="checkbox" class="listCheckbox" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </th>
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 4.0</td>
+                                                    <td>Win 95+</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="customcheckbox">
+                                                            <input type="checkbox" class="listCheckbox" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </th>
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 5.0</td>
+                                                    <td>Win 95+</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="customcheckbox">
+                                                            <input type="checkbox" class="listCheckbox" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </th>
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 5.5</td>
+                                                    <td>Win 95+</td>
+                                                    <td>5.5</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <label class="customcheckbox">
+                                                            <input type="checkbox" class="listCheckbox" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </th>
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 6</td>
+                                                    <td>Win 98+</td>
+                                                    <td>6</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </div>
+
+
                             <div class="card-body">
                                 <h5 class="card-title m-b-0">Identity Card</h5>
                             </div>
@@ -309,9 +408,9 @@
                                       <td th:text="${identityCard.nationality}"></td>
                                       <td th:text="${identityCard.placeOfBirthday}"></td>
                                       <td th:text="${identityCard.gender}"></td>
-                                        <td> <a th:href="@{/pdf/{id}(id=${identityCard.id})}" class="btn btn-warning btn-sm">Export PDF</a></td>
-                                        <td><a th:href="@{/updateIdCard/{id}(id=${identityCard.id})}" class="btn btn-secondary btn-sm">Update</a></td>
-                                        <td><a th:href="@{/deleteIdCard/{id}(id=${identityCard.id})}" class="btn btn-danger btn-sm">Delete</a></td>
+                                      <td> <a th:href="@{/pdf/{id}(id=${identityCard.id})}" class="btn btn-warning btn-sm">Export PDF</a></td>
+                                      <td><a th:href="@{/updateIdCard/{id}(id=${identityCard.id})}" class="btn btn-secondary btn-sm">Update</a></td>
+                                      <td><a th:href="@{/deleteIdCard/{id}(id=${identityCard.id})}" class="btn btn-danger btn-sm">Delete</a></td>
                                     </tr>
                                   </tbody>
                             </table>

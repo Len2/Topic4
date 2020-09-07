@@ -1,5 +1,5 @@
-        <div th:replace="../templates/layouts/header.html"></div>
-        <!-- ============================================================== -->
+<div th:replace="../templates/layouts/footer.html"></div>
+     <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
@@ -14,7 +14,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Update Card ID</li>
+                                    <li class="breadcrumb-item active" aria-current="page">New Card ID</li>
                                 </ol>
                             </nav>
                         </div>
@@ -34,103 +34,78 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form action="#" th:action="@{/saveIdCard}" th:object="${identity_card}" method="POST"
-                                class="form-horizontal">
+                            <form action="#" th:action="@{/saveIdCard}" th:object="${identity_card}"
+                            method="POST" class="form-horizontal">
                                 <div class="card-body">
-                                    <input type="hidden" th:field="*{id}" />
-                                    <h4 class="card-title">Update Card ID</h4>
+                                    <h4 class="card-title">Add new Card ID</h4>
                                     <div class="form-group row">
-                                        <label for="fname"
-                                            class="col-sm-3 text-right control-label col-form-label">First Name</label>
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">First Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" th:field="*{firstName}" class="form-control" 
-                                                placeholder="First Name Here">
+                                            <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last
-                                            Name</label>
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" th:field="*{lastName}"
-                                                placeholder="Last Name Here">
+                                            <input type="text" class="form-control"th:field="*{lastName}" placeholder="Last Name Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="lname"
-                                            class="col-sm-3 text-right control-label col-form-label">Place Of
-                                            Birthday</label>
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Place Of Birthday</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" th:field="*{placeOfBirthday}"
-                                                placeholder="Place Here">
+                                            <input type="text" class="form-control" th:field="*{placeOfBirthday}" placeholder="Place Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="email1"
-                                            class="col-sm-3 text-right control-label col-form-label">Date Of Birthday</label>
+                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Date Of Birthday</label>
                                         <div class="col-sm-9">
-                                            <input type="datetime" class="form-control" th:field="*{dateOfBirthday}"
-                                                placeholder="Company Name Here">
+                                            <input type="date" class="form-control" th:field="*{dateOfBirthday}" placeholder="Company Name Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Date
-                                            Of Expiry</label>
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Date Of Expiry</label>
                                         <div class="col-sm-9">
-                                            <input type="datetime" class="form-control" th:field="*{dateOfExpiry}"
-                                                placeholder="Date Here">
+                                            <input type="date" class="form-control" th:field="*{dateOfExpiry}" placeholder="Date Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Date
-                                            Of Issue</label>
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Date Of Issue</label>
                                         <div class="col-sm-9">
-                                            <input type="datetime" class="form-control" th:field="*{dateOfIssue}"
-                                                placeholder="Date Here">
+                                            <input type="date" class="form-control" th:field="*{dateOfIssue}" placeholder="Date Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="cono1"
-                                            class="col-sm-3 text-right control-label col-form-label">Gender</label>
-                                        <div class="col-md-9">
-                                            <select class="select2 form-control custom-select" th:field="*{gender}"
-                                                style="width: 100%; height:36px;">
+                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Gender</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" th:field="*{gender}" style="width: 100%; height:36px;">
                                                 <option value="M">Male</option>
                                                 <option value="F">Fmale</option>
-                                            </select>
-                                        </div>
+                                        </select>
+                                    </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="cono1"
-                                            class="col-sm-3 text-right control-label col-form-label">Issued By</label>
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Issued By</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" th:field="*{issuedBy}"
-                                                placeholder="issuedBy">
+                                            <input type="text" class="form-control" th:field="*{issuedBy}" placeholder="issuedBy">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="cono1"
-                                            class="col-sm-3 text-right control-label col-form-label">Nationality</label>
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Nationality</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" th:field="*{nationality}"
-                                                placeholder="Nationality Here">
+                                            <input type="text" class="form-control" th:field="*{nationality}" placeholder="Nationality Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="cono1"
-                                            class="col-sm-3 text-right control-label col-form-label">Personal
-                                            Number</label>
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Personal Number</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" th:field="*{personalNumber}"
-                                                placeholder="Personal Number Here">
+                                            <input type="number" class="form-control"  th:field="*{personalNumber}" placeholder="Personal Number Here">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="cono1"
-                                            class="col-sm-3 text-right control-label col-form-label">Residence</label>
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Residence</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" th:field="*{residence}"
-                                                placeholder="Residence Here">
+                                            <input type="text" class="form-control" th:field="*{residence}" placeholder="Residence Here">
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +115,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div>  
                     </div>
                 </div>
 
@@ -162,7 +137,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by css.de
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -170,3 +145,4 @@
         </div>
         <!-- ============================================================== -->
         <div th:replace="../templates/layouts/footer.html"></div>
+       

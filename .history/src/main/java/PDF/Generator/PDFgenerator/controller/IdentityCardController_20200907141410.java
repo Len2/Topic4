@@ -147,8 +147,8 @@ public class IdentityCardController {
 			return null;
 		}
 	}
-	// @GetMapping("/msg")
-	// public String printMesssage() {
-	// 	return "test";
-	// }
+	@GetMapping("/msg")
+	public String printMesssage() {
+		return "panel1";
+	}
 }

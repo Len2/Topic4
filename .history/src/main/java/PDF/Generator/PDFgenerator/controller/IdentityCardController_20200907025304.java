@@ -3,7 +3,7 @@ package PDF.Generator.PDFgenerator.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import PDF.Generator.PDFgenerator.model.Identity_card;
 import PDF.Generator.PDFgenerator.service.IdentityCardService;
@@ -135,17 +135,17 @@ public class IdentityCardController {
 		ve.setProperty("classpath.resource.loader.class",
 				ClasspathResourceLoader.class.getName());
 		ve.init();
-		Template t = ve.getTemplate("templates/PDF_template.html");
+		Template t = ve.getTemplate("templates/helloworld.html");
 		/* create a context and add data */
 		VelocityContext context = new VelocityContext();
 
 		// get employee prej service
-		Identity_card identity_card = identityCardService.getIdentityCardById(id);
+		Identity_card employee = identityCardService.getIdentityCardById(id);
 		// set employee si atribut per ta mbushur formen
 		//model.addAttribute("employee", employee);
 
 		context.put("name", "World");
-		context.put("id", identity_card.getId());
+		context.put("id", employee.getId());
 		context.put("genDateTime", LocalDateTime.now().toString());
 		/* now render the template into a StringWriter */
 		StringWriter writer = new StringWriter();
@@ -160,7 +160,7 @@ public class IdentityCardController {
 		HttpHeaders header = new HttpHeaders();
 	    header.setContentType(MediaType.APPLICATION_PDF);
 	    header.set(HttpHeaders.CONTENT_DISPOSITION,
-	                   "attachment; filename=" + "Identity Card.pdf".replace(" ", "_"));
+	                   "attachment; filename=" + "identity Card.pdf".replace(" ", "_"));
 	    header.setContentLength(baos.toByteArray().length);
 
 	    return new HttpEntity<byte[]>(baos.toByteArray(), header);

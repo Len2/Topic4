@@ -135,7 +135,7 @@ public class IdentityCardController {
 		ve.setProperty("classpath.resource.loader.class",
 				ClasspathResourceLoader.class.getName());
 		ve.init();
-		Template t = ve.getTemplate("templates/PDF_template.html");
+		Template t = ve.getTemplate("templates/helloworld.html");
 		/* create a context and add data */
 		VelocityContext context = new VelocityContext();
 
@@ -145,7 +145,7 @@ public class IdentityCardController {
 		//model.addAttribute("employee", employee);
 
 		context.put("name", "World");
-		context.put("id", identity_card.getId());
+		context.put("id", employee.getId());
 		context.put("genDateTime", LocalDateTime.now().toString());
 		/* now render the template into a StringWriter */
 		StringWriter writer = new StringWriter();

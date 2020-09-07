@@ -45,6 +45,8 @@ public class Identity_card {
     private String nationality;
 
     @Column(name = "personal_number")
+    // @NonNull
+    // @Length(min = 10, max = 10)
     private long personal_number;
 
     @Column(name = "residence")

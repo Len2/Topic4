@@ -2,9 +2,12 @@ package PDF.Generator.PDFgenerator.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,7 +56,11 @@ public class IdentityCardController {
 	}
 
 	@PostMapping("/saveIdCard")
-	public String saveEmployee( @ModelAttribute("identity_card")  Identity_card identity_card) {
+	public String saveEmployee(@ModelAttribute("identity_card") @Valid Identity_card identity_card, Errors errors, Model model) {
+		if(errors.hasErrors()){
+			model.addAttribute("attributeName", "")
+			return "addNew";
+		}
 		identityCardService.saveIdentityCard(identity_card);
 		return "redirect:/";
 	}

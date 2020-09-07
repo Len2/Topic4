@@ -40,6 +40,8 @@ public class IdentityCardController {
 
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
+		// return findPaginated(1, "firstName", "asc", model);
+		// return "Test";
 		List<Identity_card> identity_card = identityCardService.getAllIdentityCard();
 		model.addAttribute("identity_card", identity_card);
 		return "index";
@@ -53,7 +55,7 @@ public class IdentityCardController {
 	}
 
 	@PostMapping("/saveIdCard")
-	public String saveEmployee( @ModelAttribute("identity_card")  Identity_card identity_card) {
+	public String saveEmployee(@ModelAttribute("identity_card") Identity_card identity_card) {
 		identityCardService.saveIdentityCard(identity_card);
 		return "redirect:/";
 	}

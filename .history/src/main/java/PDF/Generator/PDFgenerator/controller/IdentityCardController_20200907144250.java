@@ -40,6 +40,8 @@ public class IdentityCardController {
 
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
+		// return findPaginated(1, "firstName", "asc", model);
+		// return "Test";
 		List<Identity_card> identity_card = identityCardService.getAllIdentityCard();
 		model.addAttribute("identity_card", identity_card);
 		return "index";
@@ -53,7 +55,8 @@ public class IdentityCardController {
 	}
 
 	@PostMapping("/saveIdCard")
-	public String saveEmployee( @ModelAttribute("identity_card")  Identity_card identity_card) {
+	public String saveEmployee(@ModelAttribute("identity_card") Identity_card identity_card) {
+		// Ruan employee ne databaze
 		identityCardService.saveIdentityCard(identity_card);
 		return "redirect:/";
 	}
@@ -83,6 +86,7 @@ public class IdentityCardController {
 		/* create a context and add data */
 		VelocityContext context = new VelocityContext();
 		Identity_card identity_card = identityCardService.getIdentityCardById(id);
+
 		context.put("id", identity_card.getId());
 		context.put("firstName", identity_card.getFirstName());
 		context.put("lastName", identity_card.getLastName());
@@ -94,8 +98,10 @@ public class IdentityCardController {
 		context.put("dateOfIssue", identity_card.getDateOfIssue());
 		context.put("gender", identity_card.getGender());
 		context.put("issuedBy", identity_card.getIssuedBy());
+
 		context.put("nationality", identity_card.getNationality());
 		context.put("personalNumber", identity_card.getPersonalNumber());
+
 		context.put("residence", identity_card.getResidence());
 		context.put("genDateTime", LocalDateTime.now().toString());
 		StringWriter writer = new StringWriter();

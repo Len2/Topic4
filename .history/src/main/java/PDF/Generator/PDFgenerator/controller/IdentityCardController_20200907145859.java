@@ -53,7 +53,7 @@ public class IdentityCardController {
 	}
 
 	@PostMapping("/saveIdCard")
-	public String saveEmployee( @ModelAttribute("identity_card")  Identity_card identity_card) {
+	public String saveEmployee(@ModelAttribute("identity_card") Identity_card identity_card) {
 		identityCardService.saveIdentityCard(identity_card);
 		return "redirect:/";
 	}

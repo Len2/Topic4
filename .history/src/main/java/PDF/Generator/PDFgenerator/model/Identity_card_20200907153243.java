@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 // import org.hibernate.validator.constraints.Length;
 
@@ -45,6 +46,8 @@ public class Identity_card {
     private String nationality;
 
     @Column(name = "personal_number")
+    // @NonNull
+    // @Length(min = 10, max = 10)
     private long personal_number;
 
     @Column(name = "residence")

@@ -5,8 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 // import org.hibernate.validator.constraints.Length;
+import org.springframework.lang.NonNull;
+
 
 import javax.persistence.GenerationType;
 
@@ -18,6 +21,7 @@ public class Identity_card {
     private long id;
 
     @Column(name = "first_name")
+    @NotNull
     private String first_name;
 
     @Column(name = "last_name")
@@ -45,6 +49,8 @@ public class Identity_card {
     private String nationality;
 
     @Column(name = "personal_number")
+    // @NonNull
+    // @Length(min = 10, max = 10)
     private long personal_number;
 
     @Column(name = "residence")

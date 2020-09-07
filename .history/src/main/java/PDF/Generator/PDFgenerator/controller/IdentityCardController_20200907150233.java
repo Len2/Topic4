@@ -2,6 +2,8 @@ package PDF.Generator.PDFgenerator.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,7 +55,7 @@ public class IdentityCardController {
 	}
 
 	@PostMapping("/saveIdCard")
-	public String saveEmployee( @ModelAttribute("identity_card")  Identity_card identity_card) {
+	public String saveEmployee(@ModelAttribute("identity_card") @Valid Identity_card identity_card, Err) {
 		identityCardService.saveIdentityCard(identity_card);
 		return "redirect:/";
 	}

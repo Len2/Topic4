@@ -47,6 +47,7 @@ public class Identity_card {
     @Column(name = "residence")
     private String residence;
 
+
     public long getId(){
         return id;
     }
@@ -57,15 +58,14 @@ public class Identity_card {
     public String getFirstName(){
         return first_name;
     }
-
     public void setFirstName(String firstName){
         this.first_name = firstName;
     }
 
+
     public String getLastName(){
         return last_name;
     }
-
     public void setLastName(String lastName){
         this.last_name = lastName;
     }
@@ -73,7 +73,7 @@ public class Identity_card {
     public String getPlaceOfBirthday(){
         return place_of_birthday;
     }
-
+    
     public void setPlaceOfBirthday(String placeOfBirthday){
         this.place_of_birthday = placeOfBirthday;
     }

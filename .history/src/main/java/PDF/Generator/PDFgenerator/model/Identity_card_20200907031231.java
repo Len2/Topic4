@@ -47,6 +47,7 @@ public class Identity_card {
     @Column(name = "residence")
     private String residence;
 
+
     public long getId(){
         return id;
     }
@@ -57,15 +58,14 @@ public class Identity_card {
     public String getFirstName(){
         return first_name;
     }
-
     public void setFirstName(String firstName){
         this.first_name = firstName;
     }
 
+
     public String getLastName(){
         return last_name;
     }
-
     public void setLastName(String lastName){
         this.last_name = lastName;
     }
@@ -73,7 +73,6 @@ public class Identity_card {
     public String getPlaceOfBirthday(){
         return place_of_birthday;
     }
-
     public void setPlaceOfBirthday(String placeOfBirthday){
         this.place_of_birthday = placeOfBirthday;
     }
@@ -81,15 +80,14 @@ public class Identity_card {
     public String getDateOfBirthday(){
         return date_of_birthday;
     }
-
     public void setDateOfBirthday(String dateOfBirthday){
         this.date_of_birthday = dateOfBirthday;
     }
 
+
     public String getDateOfExpiry(){
         return date_of_expiry;
     }
-
     public void setDateOfExpiry(String dateOfExpiry){
         this.date_of_expiry = dateOfExpiry;
     }
@@ -97,7 +95,6 @@ public class Identity_card {
     public String getDateOfIssue(){
         return date_of_issue;
     }
-
     public void setDateOfIssue(String dateOfIssue){
         this.date_of_issue = dateOfIssue;
     }
@@ -105,7 +102,7 @@ public class Identity_card {
     public Character getGender(){
         return gender;
     }
-
+    
     public void setGender(Character gender){
         this.gender = gender;
     }
